@@ -1,0 +1,7 @@
+base   copytonewpage
+author orangain
+email  orangain@gmail.com
+date   2014-09-04
+name   copytonewpage plugin
+desc   Create a new page from an existing page.
+url    https://github.com/orangain/dokuwiki-plugin-copytonewpage
