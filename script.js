@@ -10,7 +10,8 @@ jQuery(function() {
           continue;
         }
 
-        var url = 'doku.php?id=' + encodeURIComponent(newId) + '&do=edit&copyfrom=' + encodeURIComponent(oldId);
+        var url = DOKU_BASE + 'doku.php?id=' + encodeURIComponent(newId) +
+          '&do=edit&copyfrom=' + encodeURIComponent(oldId);
         location.href = url;
       }
       break;
