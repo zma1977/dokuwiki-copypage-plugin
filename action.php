@@ -25,8 +25,11 @@ class action_plugin_copytonewpage extends DokuWiki_Action_Plugin {
 
     public function get_template(Doku_Event &$event, $param) {
         if (strlen($_REQUEST['copyfrom']) > 0) {
-            $tpl = io_readFile(wikiFN($_REQUEST['copyfrom']));
-            $event->data['tpl'] = $tpl;
+            $template_id = $_REQUEST['copyfrom'];
+            if (auth_quickaclcheck($template_id) & AUTH_READ > 0) {
+                $tpl = io_readFile(wikiFN($template_id));
+                $event->data['tpl'] = $tpl;
+            }
         }
     }
 
