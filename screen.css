@@ -1,0 +1,20 @@
+#dokuwiki__pagetools ul li a.copytonewpage:before {
+	content: url(images/pagetools-sprite.png);
+}
+
+#dokuwiki__pagetools:hover ul li a.copytonewpage:before,
+#dokuwiki__pagetools ul li a.copytonewpage:focus:before {
+	content: none;
+}
+
+#dokuwiki__pagetools:hover ul li a.copytonewpage,
+#dokuwiki__pagetools ul li a.copytonewpage:focus,
+#dokuwiki__pagetools ul li a.copytonewpage:active {
+	background-image: url(images/pagetools-sprite.png);
+}
+
+#dokuwiki__pagetools ul li a.copytonewpage:hover,
+#dokuwiki__pagetools ul li a.copytonewpage:active,
+#dokuwiki__pagetools ul li a.copytonewpage:focus {
+	background-position: right -45px;
+}
