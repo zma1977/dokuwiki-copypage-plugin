@@ -51,7 +51,13 @@ class action_plugin_copytonewpage extends DokuWiki_Action_Plugin {
      * @return void
      */
     public function add_tool_button(Doku_Event &$event, $param) {
-        $event->data['items']['copytonewpage'] = '<li><a href="#" id="dokuwiki__copytonewpage" class="action copytonewpage" rel="nofollow"><span>' . $this->getLang('copytonewpage') . '</span></a></li>';
+        $event->data['items']['copytonewpage'] = '<li>' .
+            '<a href="#" id="copytonewpage__copy" class="action copytonewpage" rel="nofollow">' .
+            '<span>' .
+            $this->getLang('copytonewpage') .
+            '</span>' .
+            '</a>' .
+            '</li>';
     }
 
 }

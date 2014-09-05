@@ -1,5 +1,5 @@
 jQuery(function() {
-  jQuery('#dokuwiki__copytonewpage').click(function(e) {
+  jQuery('#copytonewpage__copy').click(function(e) {
     e.preventDefault();
     var oldId = JSINFO.id;
     while (true) {
