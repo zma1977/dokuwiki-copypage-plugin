@@ -23,6 +23,14 @@ class action_plugin_copytonewpage extends DokuWiki_Action_Plugin {
         $controller->register_hook('TEMPLATE_PAGETOOLS_DISPLAY', 'BEFORE', $this, 'add_tool_button');
     }
 
+    /**
+     * Handler to load page template.
+     *
+     * @param Doku_Event $event  event object by reference
+     * @param mixed      $param  [the parameters passed as fifth argument to register_hook() when this
+     *                           handler was registered]
+     * @return void
+     */
     public function get_template(Doku_Event &$event, $param) {
         if (strlen($_REQUEST['copyfrom']) > 0) {
             $template_id = $_REQUEST['copyfrom'];
@@ -34,18 +42,15 @@ class action_plugin_copytonewpage extends DokuWiki_Action_Plugin {
     }
 
     /**
-     * [Custom event handler which performs action]
+     * Handler to add page tools.
      *
      * @param Doku_Event $event  event object by reference
      * @param mixed      $param  [the parameters passed as fifth argument to register_hook() when this
      *                           handler was registered]
      * @return void
      */
-
     public function add_tool_button(Doku_Event &$event, $param) {
         $event->data['items']['copytonewpage'] = '<li><a href="#" id="dokuwiki__copytonewpage" class="action copytonewpage" rel="nofollow"><span>Copy to new page</span></a></li>';
     }
 
 }
-
-// vim:ts=4:sw=4:et:
