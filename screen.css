@@ -18,3 +18,9 @@
 #dokuwiki__pagetools ul li a.copytonewpage:focus {
 	background-position: right -45px;
 }
+
+[dir=rtl] #dokuwiki__pagetools ul li a.copytonewpage:hover,
+[dir=rtl] #dokuwiki__pagetools ul li a.copytonewpage:active,
+[dir=rtl] #dokuwiki__pagetools ul li a.copytonewpage:focus {
+	background-position: left -45px;
+}
