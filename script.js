@@ -3,10 +3,10 @@ jQuery(function() {
     e.preventDefault();
     var oldId = JSINFO.id;
     while (true) {
-      var newId = prompt("Enter new-page's ID.", oldId);
+      var newId = prompt(LANG.plugins.copytonewpage.enter_page_id, oldId);
       if (newId !== null) {
         if (newId === oldId) {
-          alert('You must enter a different ID from current page');
+          alert(LANG.plugins.copytonewpage.different_id_required);
           continue;
         }
 

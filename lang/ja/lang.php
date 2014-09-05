@@ -11,7 +11,7 @@
 // custom language strings for the plugin
 // $lang['fixme'] = 'FIXME';
 
-$lang['copytonewpage'] = 'Copy to new page';
+$lang['copytonewpage'] = 'コピーして新規ページ';
 
-$lang['js']['enter_page_id'] = "Enter new-page's ID.";
-$lang['js']['different_id_required'] = 'You must enter a different ID from current page.';
+$lang['js']['enter_page_id'] = '新規ページのIDを入力してください。';
+$lang['js']['different_id_required'] = '現在のページと異なるIDを入力してください。';
