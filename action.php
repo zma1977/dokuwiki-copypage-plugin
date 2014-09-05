@@ -37,6 +37,7 @@ class action_plugin_copytonewpage extends DokuWiki_Action_Plugin {
             if (auth_quickaclcheck($template_id) & AUTH_READ > 0) {
                 $tpl = io_readFile(wikiFN($template_id));
                 $event->data['tpl'] = $tpl;
+                $event->preventDefault();
             }
         }
     }
