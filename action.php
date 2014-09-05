@@ -19,8 +19,15 @@ class action_plugin_copytonewpage extends DokuWiki_Action_Plugin {
      */
     public function register(Doku_Event_Handler $controller) {
 
-       $controller->register_hook('edit', 'FIXME', $this, 'handle_edit');
-   
+        $controller->register_hook('COMMON_PAGETPL_LOAD', 'BEFORE', $this, 'get_template');
+        $controller->register_hook('TEMPLATE_PAGETOOLS_DISPLAY', 'BEFORE', $this, 'add_tool_button');
+    }
+
+    public function get_template(Doku_Event &$event, $param) {
+        if (strlen($_REQUEST['copyfrom']) > 0) {
+            $tpl = io_readFile(wikiFN($_REQUEST['copyfrom']));
+            $event->data['tpl'] = $tpl;
+        }
     }
 
     /**
@@ -32,7 +39,8 @@ class action_plugin_copytonewpage extends DokuWiki_Action_Plugin {
      * @return void
      */
 
-    public function handle_edit(Doku_Event &$event, $param) {
+    public function add_tool_button(Doku_Event &$event, $param) {
+        $event->data['items']['copytonewpage'] = '<li><a href="#" id="dokuwiki__copytonewpage" class="action copytonewpage" rel="nofollow"><span>Copy to new page</span></a></li>';
     }
 
 }
