@@ -1,12 +1,12 @@
 jQuery(function() {
-  jQuery('#copytonewpage__copy').click(function(e) {
+  jQuery('#copypageplugin__copy').click(function(e) {
     e.preventDefault();
     var oldId = JSINFO.id;
     while (true) {
-      var newId = prompt(LANG.plugins.copytonewpage.enter_page_id, oldId);
+      var newId = prompt(LANG.plugins.copypage.enter_page_id, oldId);
       if (newId !== null) {
         if (newId === oldId) {
-          alert(LANG.plugins.copytonewpage.different_id_required);
+          alert(LANG.plugins.copypage.different_id_required);
           continue;
         }
 

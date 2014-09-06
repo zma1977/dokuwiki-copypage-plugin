@@ -1,6 +1,6 @@
 <?php
 /**
- * English language file for copytonewpage plugin
+ * English language file for copypage plugin
  *
  * @author orangain <orangain@gmail.com>
  */
@@ -11,7 +11,7 @@
 // custom language strings for the plugin
 // $lang['fixme'] = 'FIXME';
 
-$lang['copytonewpage'] = 'Copy to new page';
+$lang['copypage'] = 'Copy this page';
 
 $lang['js']['enter_page_id'] = "Enter new-page's ID.";
 $lang['js']['different_id_required'] = 'You must enter a different ID from current page.';

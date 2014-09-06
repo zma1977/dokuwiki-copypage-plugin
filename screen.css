@@ -1,26 +1,26 @@
-#dokuwiki__pagetools ul li a.copytonewpage:before {
+#dokuwiki__pagetools ul li a.copypage:before {
 	content: url(images/pagetools-sprite.png);
 }
 
-#dokuwiki__pagetools:hover ul li a.copytonewpage:before,
-#dokuwiki__pagetools ul li a.copytonewpage:focus:before {
+#dokuwiki__pagetools:hover ul li a.copypage:before,
+#dokuwiki__pagetools ul li a.copypage:focus:before {
 	content: none;
 }
 
-#dokuwiki__pagetools:hover ul li a.copytonewpage,
-#dokuwiki__pagetools ul li a.copytonewpage:focus,
-#dokuwiki__pagetools ul li a.copytonewpage:active {
+#dokuwiki__pagetools:hover ul li a.copypage,
+#dokuwiki__pagetools ul li a.copypage:focus,
+#dokuwiki__pagetools ul li a.copypage:active {
 	background-image: url(images/pagetools-sprite.png);
 }
 
-#dokuwiki__pagetools ul li a.copytonewpage:hover,
-#dokuwiki__pagetools ul li a.copytonewpage:active,
-#dokuwiki__pagetools ul li a.copytonewpage:focus {
+#dokuwiki__pagetools ul li a.copypage:hover,
+#dokuwiki__pagetools ul li a.copypage:active,
+#dokuwiki__pagetools ul li a.copypage:focus {
 	background-position: right -45px;
 }
 
-[dir=rtl] #dokuwiki__pagetools ul li a.copytonewpage:hover,
-[dir=rtl] #dokuwiki__pagetools ul li a.copytonewpage:active,
-[dir=rtl] #dokuwiki__pagetools ul li a.copytonewpage:focus {
+[dir=rtl] #dokuwiki__pagetools ul li a.copypage:hover,
+[dir=rtl] #dokuwiki__pagetools ul li a.copypage:active,
+[dir=rtl] #dokuwiki__pagetools ul li a.copypage:focus {
 	background-position: left -45px;
 }

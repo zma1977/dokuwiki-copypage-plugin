@@ -1,6 +1,6 @@
 <?php
 /**
- * DokuWiki Plugin copytonewpage (Action Component)
+ * DokuWiki Plugin copypage (Action Component)
  *
  * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
  * @author  orangain <orangain@gmail.com>
@@ -9,7 +9,7 @@
 // must be run within Dokuwiki
 if(!defined('DOKU_INC')) die();
 
-class action_plugin_copytonewpage extends DokuWiki_Action_Plugin {
+class action_plugin_copypage extends DokuWiki_Action_Plugin {
 
     /**
      * Registers a callback function for a given event
@@ -51,10 +51,10 @@ class action_plugin_copytonewpage extends DokuWiki_Action_Plugin {
      * @return void
      */
     public function add_tool_button(Doku_Event &$event, $param) {
-        $event->data['items']['copytonewpage'] = '<li>' .
-            '<a href="#" id="copytonewpage__copy" class="action copytonewpage" rel="nofollow">' .
+        $event->data['items']['copypage'] = '<li>' .
+            '<a href="#" id="copypageplugin__copy" class="action copypage" rel="nofollow">' .
             '<span>' .
-            $this->getLang('copytonewpage') .
+            $this->getLang('copypage') .
             '</span>' .
             '</a>' .
             '</li>';
