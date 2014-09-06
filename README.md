@@ -3,6 +3,8 @@ Copy Page Plugin for DokuWiki
 
 Create a new page from an existing page.
 
+![Screenshot of Copy Page Plugin](https://raw.githubusercontent.com/orangain/dokuwiki-plugin-copytonewpage/master/images/screenshot.png)
+
 All documentation for this plugin can be found at
 https://www.dokuwiki.org/plugin:copypage
 
