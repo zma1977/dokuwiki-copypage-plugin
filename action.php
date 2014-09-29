@@ -34,7 +34,7 @@ class action_plugin_copypage extends DokuWiki_Action_Plugin {
     public function get_template(Doku_Event &$event, $param) {
         if (strlen($_REQUEST['copyfrom']) > 0) {
             $template_id = $_REQUEST['copyfrom'];
-            if (auth_quickaclcheck($template_id) & AUTH_READ > 0) {
+            if (auth_quickaclcheck($template_id) >= AUTH_READ) {
                 $tpl = io_readFile(wikiFN($template_id));
                 $event->data['tpl'] = $tpl;
                 $event->preventDefault();

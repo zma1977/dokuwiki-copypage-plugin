@@ -1,7 +1,7 @@
 base   copypage
 author orangain
 email  orangain@gmail.com
-date   2014-09-06
+date   2014-09-29
 name   Copy Page Plugin
 desc   Create a new page from an existing page.
 url    https://www.dokuwiki.org/plugin:copypage
