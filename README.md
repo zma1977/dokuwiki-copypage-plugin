@@ -15,6 +15,17 @@ will not work!
 Please refer to http://www.dokuwiki.org/plugins for additional info
 on how to install plugins in DokuWiki.
 
+For Developers
+--------------
+
+You can launch a DokuWiki instance with the copypage plugin in your current directory by [docker](https://www.docker.com/). Thanks [mprasil](https://hub.docker.com/r/mprasil/dokuwiki/)!
+
+```
+$ docker run --rm -v `pwd`:/dokuwiki/lib/plugins/copypage -p 80:80 mprasil/dokuwiki:2015-08-10a
+```
+
+The version of dokuwiki can be specified by [tags](https://hub.docker.com/r/mprasil/dokuwiki/tags/).
+
 License
 -------
 
