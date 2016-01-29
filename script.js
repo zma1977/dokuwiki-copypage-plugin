@@ -18,14 +18,14 @@ jQuery(function() {
   };
 
   // Handle desktop menu
-  jQuery('#copypageplugin__copy').click(function(e) {
+  jQuery('.copypageplugin__copy').click(function(e) {
     e.preventDefault();
     copyThisPage();
   });
 
   // Add a menu item to the "Page Tools" group of the mobile menu
   jQuery('select.quickselect optgroup:nth-of-type(1)').append(
-    jQuery('<option value="copypage">').text(jQuery('#copypageplugin__copy').text()));
+    jQuery('<option value="copypage">').text(jQuery('.copypageplugin__copy').text()));
 
   // Handle mobile menu
   jQuery('select.quickselect')

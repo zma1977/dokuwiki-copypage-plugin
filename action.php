@@ -52,7 +52,7 @@ class action_plugin_copypage extends DokuWiki_Action_Plugin {
      */
     public function add_tool_button(Doku_Event &$event, $param) {
         $event->data['items']['copypage'] = '<li>' .
-            '<a href="#" id="copypageplugin__copy" class="action copypage" rel="nofollow">' .
+            '<a href="#" class="action copypage copypageplugin__copy" rel="nofollow">' .
             '<span>' .
             $this->getLang('copypage') .
             '</span>' .
