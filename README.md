@@ -24,7 +24,14 @@ You can launch a DokuWiki instance with the copypage plugin in your current dire
 $ docker run --rm -v `pwd`:/dokuwiki/lib/plugins/copypage -p 80:80 mprasil/dokuwiki:2015-08-10a
 ```
 
+Then navigate to `http://<YOUR DOCKER HOST>/`.
+
 The version of dokuwiki can be specified by [tags](https://hub.docker.com/r/mprasil/dokuwiki/tags/).
+
+### Tips for debugging
+
+* If you need some configuration of DokuWiki, navigate to `http://<YOUR DOCKER HOST>/install.php` to setup your instance.
+* Disabling [compress](https://www.dokuwiki.org/config:compress) option will help debugging JavaScript.
 
 License
 -------
