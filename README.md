@@ -33,6 +33,10 @@ The version of dokuwiki can be specified by [tags](https://hub.docker.com/r/mpra
 * If you need some configuration of DokuWiki, navigate to `http://<YOUR DOCKER HOST>/install.php` to setup your instance.
 * Disabling [compress](https://www.dokuwiki.org/config:compress) option will help debugging JavaScript.
 
+### Resources
+
+* [Plugin Development](https://www.dokuwiki.org/devel:plugins)
+
 License
 -------
 
