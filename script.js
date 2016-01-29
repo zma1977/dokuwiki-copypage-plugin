@@ -3,7 +3,8 @@ jQuery(function() {
     var oldId = JSINFO.id;
     while (true) {
       var newId = prompt(LANG.plugins.copypage.enter_page_id, oldId);
-      if (newId !== null) {
+      // Note: When a user canceled, most browsers return the null, but Safari returns the empty string
+      if (newId) {
         if (newId === oldId) {
           alert(LANG.plugins.copypage.different_id_required);
           continue;
