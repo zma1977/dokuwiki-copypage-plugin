@@ -1,3 +1,4 @@
+/* DEPRECATED since 2017-09-01 */
 #dokuwiki__pagetools ul li a.copypage:before {
 	content: url(images/pagetools-sprite.png);
 }

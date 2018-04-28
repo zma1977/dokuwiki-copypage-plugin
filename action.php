@@ -20,6 +20,9 @@ class action_plugin_copypage extends DokuWiki_Action_Plugin {
     public function register(Doku_Event_Handler $controller) {
 
         $controller->register_hook('COMMON_PAGETPL_LOAD', 'BEFORE', $this, 'get_template');
+        // since 2017-09-01
+        $controller->register_hook('MENU_ITEMS_ASSEMBLY', 'AFTER', $this, 'add_menu_item', array());
+        // DEPRECATED since 2017-09-01
         $controller->register_hook('TEMPLATE_PAGETOOLS_DISPLAY', 'BEFORE', $this, 'add_tool_button');
     }
 
@@ -47,7 +50,7 @@ class action_plugin_copypage extends DokuWiki_Action_Plugin {
     }
 
     /**
-     * Handler to add page tools.
+     * (DEPRECATED since 2017-09-01) Handler to add page tools.
      *
      * @param Doku_Event $event  event object by reference
      * @param mixed      $param  [the parameters passed as fifth argument to register_hook() when this
@@ -62,6 +65,19 @@ class action_plugin_copypage extends DokuWiki_Action_Plugin {
             '</span>' .
             '</a>' .
             '</li>';
+    }
+
+    /**
+     * Handler to add menu item (since 2017-09-01).
+     *
+     * @param Doku_Event $event  event object
+     * @return void
+     */
+    public function add_menu_item(Doku_Event $event) {
+        if ($event->data['view'] != 'page') {
+            return;
+        }
+        array_splice($event->data['items'], -1, 0, [new \dokuwiki\plugin\copypage\MenuItem()]);
     }
 
 }
