@@ -7,9 +7,12 @@
  */
 
 // must be run within Dokuwiki
-if(!defined('DOKU_INC')) die();
+if (!defined('DOKU_INC')) {
+    die();
+}
 
-class action_plugin_copypage extends DokuWiki_Action_Plugin {
+class action_plugin_copypage extends DokuWiki_Action_Plugin
+{
 
     /**
      * Registers a callback function for a given event
@@ -17,8 +20,8 @@ class action_plugin_copypage extends DokuWiki_Action_Plugin {
      * @param Doku_Event_Handler $controller DokuWiki's event controller object
      * @return void
      */
-    public function register(Doku_Event_Handler $controller) {
-
+    public function register(Doku_Event_Handler $controller)
+    {
         $controller->register_hook('COMMON_PAGETPL_LOAD', 'BEFORE', $this, 'get_template');
         // since 2017-09-01
         $controller->register_hook('MENU_ITEMS_ASSEMBLY', 'AFTER', $this, 'add_menu_item', array());
@@ -34,10 +37,11 @@ class action_plugin_copypage extends DokuWiki_Action_Plugin {
      *                           handler was registered]
      * @return void
      */
-    public function get_template(Doku_Event &$event, $param) {
+    public function get_template(Doku_Event &$event, $param)
+    {
         if (strlen($_REQUEST['copyfrom']) > 0) {
             $template_id = $_REQUEST['copyfrom'];
-            if (auth_quickaclcheck($template_id) >= AUTH_READ) {
+            if (auth_quickaclcheck($template_id) >= $this->get_permission_level()) {
                 $tpl = io_readFile(wikiFN($template_id));
                 if ($this->getConf('replaceid')) {
                     $id = $event->data['id'];
@@ -57,11 +61,12 @@ class action_plugin_copypage extends DokuWiki_Action_Plugin {
      *                           handler was registered]
      * @return void
      */
-    public function add_tool_button(Doku_Event &$event, $param) {
+    public function add_tool_button(Doku_Event &$event, $param)
+    {
         $event->data['items']['copypage'] = '<li>' .
-            '<a href="#" class="action copypage copypageplugin__copy" rel="nofollow">' .
-            '<span>' .
-            $this->getLang('copypage') .
+        '<a href="#" class="action copypage copypageplugin__copy" rel="nofollow">' .
+        '<span>' .
+        $this->getLang('copypage') .
             '</span>' .
             '</a>' .
             '</li>';
@@ -73,11 +78,27 @@ class action_plugin_copypage extends DokuWiki_Action_Plugin {
      * @param Doku_Event $event  event object
      * @return void
      */
-    public function add_menu_item(Doku_Event $event) {
-        if ($event->data['view'] != 'page') {
-            return;
+    public function add_menu_item(Doku_Event $event)
+    {
+        if (isset($ID) && auth_quickaclcheck($ID) >= $this->get_permission_level()) {
+            if ($event->data['view'] != 'page') {
+                return;
+            }
+            array_splice($event->data['items'], -1, 0, [new \dokuwiki\plugin\copypage\MenuItem()]);
         }
-        array_splice($event->data['items'], -1, 0, [new \dokuwiki\plugin\copypage\MenuItem()]);
+    }
+
+    /**
+     * Get Permission Level from config
+     *
+     * @return void
+     */
+    private function get_permission_level()
+    {
+        if ($this->getConf('onlyforauthedit')) {
+            return AUTH_EDIT;
+        }
+        return AUTH_READ;
     }
 
 }

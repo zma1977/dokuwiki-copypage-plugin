@@ -1,7 +1,7 @@
 base   copypage
-author orangain
-email  orangain@gmail.com
-date   2018-04-28
+author zma (forked from: orangain)
+email  andreas@zimmsi.at
+date   2024-04-28
 name   Copy Page Plugin
 desc   Create a new page from an existing page.
-url    https://www.dokuwiki.org/plugin:copypage
+url    https://github.com/zma1977/dokuwiki-copypage-plugin
